@@ -58,3 +58,10 @@ Ingress - Loadbalancer
 
 kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/master/deploy/static/mandatory.yaml
 minikube addons enable ingress
+
+
+
+
+For encrypting the service-account json file 
+
+docker run -it -v$(pwd):/app ruby:2.3 sh
