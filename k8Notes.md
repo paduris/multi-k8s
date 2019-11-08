@@ -14,28 +14,7 @@ kubectl apply -f k8s
 Logs:
 
 kubectl get pods
-NAME                                 READY   STATUS    RESTARTS   AGE
-client-deployment-ccd6b85bb-dltl5    1/1     Running   0          30m
-client-deployment-ccd6b85bb-f6pvd    1/1     Running   0          30m
-client-deployment-ccd6b85bb-t4lll    1/1     Running   0          30m
-server-deployment-7d67b546ff-j67rf   1/1     Running   0          2m11s
-server-deployment-7d67b546ff-k2c2x   1/1     Running   0          2m11s
-server-deployment-7d67b546ff-wf748   0/1     Pending   0          2m11s
-worker-deployment-7456468848-jfh5t   1/1     Running   0          2m11s
-Sureshs-MacBook-Pro:complex-app paduris$ kubectl logs server-deployment-7d67b546ff-k2c2x
-
-> @ start /app
-> node index.js
-
-Listening
-Error: connect ECONNREFUSED 127.0.0.1:5432
-    at TCPConnectWrap.afterConnect [as oncomplete] (net.js:1129:14) {
-  errno: -111,
-  code: 'ECONNREFUSED',
-  syscall: 'connect',
-  address: '127.0.0.1',
-  port: 5432
-}
+kubectl logs <pod-name>
 
 
 
@@ -65,3 +44,9 @@ minikube addons enable ingress
 For encrypting the service-account json file 
 
 docker run -it -v$(pwd):/app ruby:2.3 sh
+
+gem install travis 
+gem 
+
+
+travis encrypt-file service-account.json -r paduris/multi-k8s
