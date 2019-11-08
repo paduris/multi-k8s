@@ -49,4 +49,5 @@ gem install travis
 gem 
 
 
-travis encrypt-file service-account.json -r paduris/multi-k8s
+travis login --pro
+travis encrypt-file <service-account.json> --pro -r <githubuser>/multi-k8s
